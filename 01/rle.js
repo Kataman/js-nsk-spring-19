@@ -14,5 +14,20 @@
  * @return {string}
  */
 export function rle(input) {
-
+    let result;
+    let str = "";
+    let last = input[0];
+    let count = 1;
+    for (let i = 1; i < input.length; i++) {
+        if (input[i] === last) {
+            count++;
+        } 
+        else { 
+            str += last + count;
+            last = input[i];
+            count = 1;
+        } 
+    }
+    result = (str + last + count).replace(/[1]/g, '');
+    return result;
 }
