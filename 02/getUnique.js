@@ -12,4 +12,18 @@
  * @return {Set<any>} массив уникальных значений, отсортированный по возрастанию
  */
 export function getUnique(input) {
+    const symbols = {};
+    let result = [];
+
+    input.forEach((symbol) => {
+        symbols[symbol] = symbols[symbol] || 0;
+        symbols[symbol] = symbols[symbol] + 1;
+    });   
+        
+    for (let a in symbols) {
+        if (symbols[a] >= 1) {
+            result.push(parseInt(a, 10));
+        }
+    } 
+    return result.sort();
 }

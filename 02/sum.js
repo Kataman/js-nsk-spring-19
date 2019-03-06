@@ -11,5 +11,18 @@
  * @param {*} x число или undefined
  * @returns а это уже сами решите
  */
-export function sum(x) {
+export function sum(a) {
+    let total = 0;
+
+    function add(num) {
+        if (num === undefined) {
+            return total;
+        }
+        else {
+            total += num;
+            return add;
+        }
+    }
+
+    return add(a);
 }

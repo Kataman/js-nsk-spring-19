@@ -12,4 +12,17 @@
  * @param number
  */
 export function mergeNumbers(number) {
+    let arr = number.toString().split('');
+    let sum = 0;
+   
+    for (let i=0; i<arr.length; i++) {
+        sum = sum + parseInt(arr[i], 10);
+    }
+      
+    if (sum >= 10) {
+        return sum = mergeNumbers(sum);
+    }
+    else {
+        return sum; 
+    }
 }

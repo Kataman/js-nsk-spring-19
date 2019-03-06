@@ -12,4 +12,7 @@
  * @return {boolean}
  */
 export function anagram(first, second) {
+    const a = first.toUpperCase().split('').sort().join('');
+    const b = second.toUpperCase().split('').sort().join('');
+    return (b === a);
 }

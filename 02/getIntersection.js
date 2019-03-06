@@ -13,4 +13,22 @@
  * @return {number[]} массив значений, отсортированный по возрастанию
  */
 export function getIntersection(first, second) {
+    first.sort(function(a, b) {
+        return a - b;
+        });
+    second.sort(function(a, b) {
+        return a - b;
+        });
+    let numbers = [];
+    
+    for(let i=0; i < first.length; i++) {
+        for(let j=0; j < second.length; j++) {
+            if (second[j] === first[i]) {
+                numbers.push(second[j]);
+                break;
+            } 
+        }
+    }
+    // console.log(numbers);
+    return numbers;
 }
