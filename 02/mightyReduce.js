@@ -12,6 +12,10 @@
  * @param {*[]}      input массив значений
  */
 export function reduceMap(fn, input) {
+    let result = input.reduce(function(arr, current, index) { 
+        return [...arr, fn(current, index)];
+    }, []);
+    return result;
 }
 
 /**
@@ -24,5 +28,7 @@ export function reduceMap(fn, input) {
  * @param {Function} fn    функция-предикат
  * @param {*[]}      input массив значений
  */
-export function reduceFilter(fn, input) {
+export function  reduceFilter(fn, input) {
+    let result = input.reduce((arr, item) => (fn(item) ? [...arr, item] : arr), []);
+    return result;   
 }

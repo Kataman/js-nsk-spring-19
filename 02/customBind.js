@@ -14,4 +14,8 @@
  * @return {Function} функция с нужным контекстом
  */
 export function customBind(func, context, ...args) {
+    return double => {
+        args.push(double);
+        return func.apply(context, args);
+    }
 }
