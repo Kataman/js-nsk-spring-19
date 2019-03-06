@@ -19,6 +19,18 @@
  * @param  {string} password пароль
  * @return {boolean}
  */
-export function passwordCheck(password) {
-
+export function passwordCheck(password) { 
+    let result;
+    if (password.length > 10 
+        && password.match(/[A-Z]/) 
+        && password.match(/[a-z]/)
+        && password.match(/[0-9]/) 
+        && password.match( /[!,?,,,.,+,-,*,/,=]/)) {
+            result = true;
+    }
+        
+    else {
+        result = false;
+    }
+    return result;
 }

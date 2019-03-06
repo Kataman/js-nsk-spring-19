@@ -14,5 +14,23 @@
  * @return {number}
  */
 export function multiple(a, b) {
+    let result = 0;
+    let positiveNumber = true;
+    let firstNumber = a;
+    let secondNumber = b;
+    
+    if (a < 0) {
+        firstNumber = -a;
+        positiveNumber = !positiveNumber;
+    }
 
+    if (b < 0) {
+        secondNumber = -b;
+        positiveNumber = !positiveNumber;
+    }
+
+    for (let i = 0; i < firstNumber; i++) {
+        result = result + secondNumber;
+    }
+    return positiveNumber ? result : -result;
 }
